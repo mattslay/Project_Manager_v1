@@ -1,0 +1,32 @@
+<div id="menubar">
+  
+  
+  
+  <ul id="menu">
+
+  <li><%= link_to 'Home', home_path()%></li>
+
+
+<% if current_user %>
+
+  <li><%= link_to 'My Account', edit_user_registration_path() %></li>
+  <li><%= link_to 'Sign Out', destroy_user_session_path() %></li>
+
+<% else %>
+
+    <li><%= link_to 'Sign In', new_user_session_path() %></li>
+
+<% end %>
+
+</ul>
+
+<% if current_user %>
+
+  USER_ID = <%= current_user.id %>
+  EMAIL = <%= current_user.email %>
+  USERNAME = <%= current_user.username %>
+
+<% end %>
+
+
+</div>
