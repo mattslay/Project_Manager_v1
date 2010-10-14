@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
   has_many :projects
+
+ def is_admin?
+    self.id == 1
+  end
 end

@@ -7,6 +7,8 @@ ProjectMgr::Application.routes.draw do
   devise_for :users
 
   resources :projects do
+    get 'all', :on => :collection
+
     resources :tasks, :shallow => true
   end
 

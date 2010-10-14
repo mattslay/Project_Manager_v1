@@ -14,6 +14,23 @@ before_filter :authenticate_user!
     end
   end
 
+
+  def all
+
+    if !current_user.is_admin?
+      redirect_to home_path()
+      return
+    end
+    
+    @projects = Project.all()
+
+    respond_to do |format|
+      format.html { render 'index'}
+      format.xml  { render :xml => @projects }
+    end
+  end
+
+
   # GET /projects/1
   # GET /projects/1.xml
   def show
