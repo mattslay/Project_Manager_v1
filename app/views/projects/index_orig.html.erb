@@ -1,0 +1,39 @@
+<h1>Projects</h1>
+
+<div class="project-div">
+  <div class="project-name">
+      <%= project.name %>
+  </div>
+  <div class="project-actions">
+    <%= link_to 'Show', project %>
+    <%= link_to 'Edit', edit_project_path(project) %>
+    <%= link_to 'Delete', project, :confirm => 'Are you sure?', :method => :delete %>
+  </div>"
+ </div>
+<%= link_to 'New Project', new_project_path %>
+
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.name %></td>
+    <td><%= project.user_id %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Delete', project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>

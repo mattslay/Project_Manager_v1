@@ -1,4 +1,4 @@
-ProjectMgr::Application.routes.draw do
+ ProjectMgr::Application.routes.draw do
 
   root :to => 'projects#index'
 

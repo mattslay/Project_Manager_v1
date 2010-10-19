@@ -1,12 +1,11 @@
-<h1>Editing project</h1>
+<h1>Edit Project</h1>
 
 <%= render 'form' %>
 
 <%= render :partial => 'tasks/list', :locals => {:tasks => @tasks, :project_id => @project.id} %>
 
 <% if @project.id != nil %>
-  <%= link_to 'New Task', new_project_task_path(@project) %>  |
+  <%= link_to 'New Task', new_project_task_path(@project) %>
 <% end %>
 
-<%= link_to 'Back', projects_path %>
 

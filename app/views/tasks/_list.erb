@@ -8,6 +8,7 @@
     <th>Est. Hrs</th>
     <th>Completed</th>
     <th>Status</th>
+    <th>User</th>
     <th>Project</th>
   </tr>
 
@@ -18,6 +19,7 @@
       <td><%=h task.estimated_hrs %></td>
       <td><%=h task.pretty_date %></td>
       <td><%= check_box_tag "task[complete_at]", "1", task.completed_at, :disabled => true %></td>
+      <td><%=h task.user_id %></td>
       <td><%=h task.project.name %></td>
 
       <%# <td><%= link_to 'View', task </td>%>

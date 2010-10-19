@@ -17,18 +17,15 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save" %>
   </div>
 
   <% if @project.id != nil %>
     <div class="field">
-      <label for="created_by"> Created by:  <%= @project.user.email %> </label>
+      <label for="created_by"> Created by:  <%= @project.user.email %> - <%= @project.created_at %> </label>
     </div>
     <div class="field">
-      <label for="created_by"> Created by:  <%= @project.created_at %> </label>
-    </div>
-    <div class="field">
-      <label for="updated_at"> Updated by:  <%= @project.updated_at %> </label>
+      <label for="updated_at"> Updated:  <%= @project.updated_at %> </label>
     </div>
   <div class="actions">
     <%= link_to 'New Task', new_project_task_path(@project) %>
