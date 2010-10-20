@@ -78,6 +78,7 @@ before_filter :authenticate_user!
   # GET /projects/new.xml
   def new
     @project = Project.new
+    @edit_mode = true
 
     respond_to do |format|
       format.html # new.html.erb
