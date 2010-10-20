@@ -16,7 +16,6 @@ before_filter :authenticate_user!
 
 
   def all
-
     if !current_user.is_admin?
       redirect_to home_path()
       return
@@ -34,20 +33,46 @@ before_filter :authenticate_user!
   # GET /projects/1
   # GET /projects/1.xml
   def show
-    if Project.exists?(params[:id])
-      @project = Project.find(params[:id])
-      @tasks = Task.find_all_by_project_id(@project.id)
-    else
-      redirect_to home_path()
-      return
-    end
 
-    respond_to do |format|
-      format.html { render 'edit'}
-      #format.html { redirect_to edit_project_path(@project)} # show.html.erb
-      format.xml  { render :xml => @project }
+    edit()
+    @edit_mode = false
+
+    if flash[:error]
+      return
+    else
+      respond_to do |format|
+        format.html { render 'edit'}
+        format.xml  { render :xml => @project }
+      end
     end
   end
+
+  # GET /projects/1/edit
+  def edit
+    if Project.exists?(params[:id])
+      @project = Project.find(params[:id])
+      if @project.user_id == current_user.id or current_user.is_admin?
+       @tasks = Task.find_all_by_project_id(@project.id)
+      else
+        deny_request("You are not allowed to view the requested data.")
+        return
+      end
+    else
+        deny_request("Record not found.")
+      return
+    end
+     @edit_mode = true
+  end
+
+
+  def deny_request(message)
+    if !message.empty?
+      flash[:error] = message
+    end
+    redirect_to home_path()
+    
+  end
+
 
   # GET /projects/new
   # GET /projects/new.xml
@@ -60,18 +85,6 @@ before_filter :authenticate_user!
     end
   end
 
-  # GET /projects/1/edit
-  def edit
-    if Project.exists?(params[:id])
-      @project = Project.find(params[:id])
-      @tasks = Task.find_all_by_project_id(@project.id)
-    else
-      redirect_to home_path()
-      return
-    end
-
-
-  end
 
   # POST /projects
   # POST /projects.xml

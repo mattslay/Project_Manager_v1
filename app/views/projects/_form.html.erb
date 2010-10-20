@@ -16,9 +16,11 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Save" %>
-  </div>
+  <% if @edit_mode %>
+    <div class="actions">
+      <%= f.submit "Save" %>
+    </div>
+  <% end %>
 
   <% if @project.id != nil %>
     <div class="field">
@@ -27,9 +29,7 @@
     <div class="field">
       <label for="updated_at"> Updated:  <%= @project.updated_at %> </label>
     </div>
-  <div class="actions">
-    <%= link_to 'New Task', new_project_task_path(@project) %>
-  </div>
+
  <% end %>
 
 
