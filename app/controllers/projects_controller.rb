@@ -114,6 +114,8 @@ before_filter :authenticate_user!
         format.html { redirect_to projects_path() }
         format.xml  { head :ok }
       else
+        @edit_mode = true
+        @tasks = Task.find_all_by_project_id(@project.id)
         format.html { render :action => "edit" }
         format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
       end

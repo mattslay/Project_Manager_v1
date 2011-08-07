@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/models/task.rb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/views/tasks/_form.html.erb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/views/tasks/_list.erb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/views/projects/_form.html.erb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/db/migrate/20101008040629_devise_create_users.rb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/views/projects/edit.html.erb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/models/project.rb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/models/user.rb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/db/schema.rb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/controllers/tasks_controller.rb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/views/projects/index.html.erb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/config/routes.rb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/controllers/application_controller.rb</file>
+        <file>file:/home/matt/Dropbox/Rails/ProjectMgr/app/controllers/projects_controller.rb</file>
+    </open-files>
 </project-private>

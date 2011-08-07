@@ -12,6 +12,9 @@
     <th>Project</th>
   </tr>
 
+<% if tasks.nil? or tasks.empty? %>
+  <p> >>> No Tasks exist for this Project. </p>
+<% else %>
   <% tasks.each do |task| %>
     <tr>
       <td><%=h task.priority %></td>
@@ -28,8 +31,5 @@
     </tr>
   <% end %>
   </table>
-
-<% if tasks.empty? %>
-  <p> >>> No Tasks exist for this Project. </p>
 <% end %>
 

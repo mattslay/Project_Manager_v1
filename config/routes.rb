@@ -6,6 +6,8 @@
 
   devise_for :users
 
+  resources :users
+  
   resources :projects do
     get 'all', :on => :collection
 

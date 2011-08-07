@@ -30,3 +30,17 @@
     <%= f.submit "Save" %>
   </div>
 <% end %>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+ $('#task_estimated_hrs').datepicker({ buttonImage: '/images/calendar.gif',
+                                       showOn: "button",
+                                       buttonImageOnly: true,
+                                       numberOfMonths: [1, 3],
+			showOtherMonths: true,
+			selectOtherMonths: true
+                                     });
+});
+
+</script>
