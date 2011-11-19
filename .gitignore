@@ -1,8 +1,7 @@
 .bundle
-db/*.sqlite3*
+.idea
 log/*.log
 *.log
-tmp/**/*
 tmp/*
 doc/api
 doc/app

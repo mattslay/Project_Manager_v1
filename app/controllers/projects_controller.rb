@@ -62,6 +62,7 @@ before_filter :authenticate_user!
       return
     end
      @edit_mode = true
+
   end
 
 
